@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Real Storys</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #e00000;
+            text-transform: uppercase;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
+            font-size: 48px; /* Increased text size */
+        }
+
+        h2 {
+            margin-top: 30px;
+            cursor: pointer;
+            color: #e00000;
+            text-transform: uppercase;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
+        }
+
+        h2:hover {
+            color: #ff0000;
+            text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.7);
+        }
+
+        .story-content {
+            display: none;
+            padding: 10px;
+            background-color: #2c2c2c;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Real Stories</h1>
+        <p>Explore the terrifying tales that actually happened, and feel the chill of reality.</p>
+
+        <script>
+            const stories = [
+                { title: "The Phantom Passenger", description: "A truck driver encounters a ghostly hitchhiker." },
+                { title: "The Hinterkaifeck Murders", description: "A gruesome family murder with a chilling aftermath." },
+                { title: "The Amityville Horror", description: "A haunted house with terrifying paranormal activity." },
+                { title: "The Disappearance of the Sodder Children", description: "Five children vanish after a fire." },
+                { title: "The Villisca Axe Murders", description: "Eight people are murdered in their sleep by an unknown assailant." },
+                { title: "The Black-Eyed Children", description: "Creepy children with black eyes who haunt people’s doorsteps." },
+                { title: "The Scary Sleepover", description: "A girl’s sleepover turns sinister with an uninvited guest." },
+                { title: "The Ghostly Hitchhiker of Clophill", description: "A haunting apparition on a remote road." },
+                { title: "The Demon of Elmendorf", description: "A family experiences paranormal events in their home." },
+                { title: "The Grinning Man", description: "A man with a sinister grin appears before disturbing events." },
+                { title: "The Bell Witch", description: "A family in Tennessee is terrorized by an unseen entity." },
+                { title: "The Skid Row Stabber", description: "A serial killer who lurked in the dark alleys of Los Angeles." },
+                { title: "The Lady of the Lake", description: "A ghostly figure appears on a lake, causing unexplained drownings." },
+                { title: "The Bizarre Death of Elisa Lam", description: "A woman’s strange death at the Cecil Hotel." },
+                { title: "The Murder of the Black Dahlia", description: "The mysterious and gruesome death of Elizabeth Short." },
+                { title: "The Disappearance of the Beaumont Children", description: "Three children vanish without a trace." },
+                { title: "The Wych Elm Mystery", description: "A skull found inside a tree leads to a baffling murder." },
+                { title: "The Death of Natalie Wood", description: "The mysterious drowning of actress Natalie Wood." },
+                { title: "The Cursed Painting of The Crying Boy", description: "A cursed painting believed to bring misfortune." },
+                { title: "The Golden State Killer", description: "A serial killer whose identity was a mystery for decades." },
+                { title: "The Zodiac Killer", description: "The unsolved serial killings that haunted San Francisco." },
+                { title: "The Silent Twins", description: "Two sisters who only communicated with each other, leading to tragedy." },
+                { title: "The Curse of the Hope Diamond", description: "A cursed gem that brings misfortune and death." },
+                { title: "The Murder of JonBenét Ramsey", description: "The unsolved death of a child beauty queen." },
+                { title: "The Dyatlov Pass Incident", description: "Nine hikers die in mysterious and unexplained circumstances in Russia." },
+                { title: "The Vampires of New Orleans", description: "A real-life family accused of horrific acts in the French Quarter." },
+                { title: "The Death of Sylvia Likens", description: "A girl subjected to unspeakable horrors before her death." },
+                { title: "The Massacre at Red Barn", description: "A grisly murder in 19th-century England." },
+                { title: "The Vanishing of Asha Degree", description: "A 9-year-old girl mysteriously disappears from her home." },
+                { title: "The Curse of the Pharaoh’s Tomb", description: "The deaths of those who opened King Tut’s tomb." },
+            ];
+
+            document.write(stories.map((story, index) => `
+                <div class="story">
+                    <h2 onclick="toggleStory(${index})">${story.title}</h2>
+                    <div id="story${index}" class="story-content">
+                        <p>${story.description}</p>
+                    </div>
+                </div>
+            `).join(''));
+        </script>
+
+        <footer>
+            <p>&copy; 2025 True Horror Stories | All stories are based on real-life accounts.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleStory(storyNum) {
+            document.querySelectorAll('.story-content').forEach(story => {
+                story.style.display = 'none';
+            });
+            var storyContent = document.getElementById("story" + storyNum);
+            storyContent.style.display = "block";
+        }
+    </script>
+</body>
+</html>
